@@ -1,0 +1,50 @@
+<script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+
+<style>
+select.code-example {
+    color: var(--fg);
+    background-color: var(--bg);
+    border: 1px solid var(--fg);
+    padding: 5px 30px 5px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select.code-example:hover {
+    border-color: var(--accent-color, #4a90e2);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+select.code-example:focus {
+    outline: none;
+    border-color: var(--accent-color, #4a90e2);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.8);
+}
+
+select.code-example option {
+    background-color: var(--bg);
+    color: var(--fg);
+    padding: 10px;
+}
+</style>
